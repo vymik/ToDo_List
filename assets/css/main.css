@@ -38,6 +38,7 @@ body {
 li {
   width: 170px;
   position: relative;
+  cursor: pointer;
 }
 
 li::after {

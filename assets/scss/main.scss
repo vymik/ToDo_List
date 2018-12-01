@@ -21,6 +21,7 @@ body{
 li {
     width: 170px;
     position: relative;
+    cursor: pointer;
     &::after{
         content: "\274c";
         font-size: 0.7rem;
