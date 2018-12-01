@@ -1,0 +1,36 @@
+@import 'reset';
+
+body{
+    margin-left: 5%;
+}
+
+.done{
+    text-decoration: line-through;
+    list-style: none;
+    position: relative;
+    &::before{
+        content: '✓';
+        margin-right:10px;
+        text-decoration: none;
+        position: absolute;
+        top:-3px;
+        left: -15px;
+    }
+
+}
+li {
+    width: 170px;
+    position: relative;
+    &::after{
+        content: "\274c";
+        font-size: 0.7rem;
+        position: absolute;
+        right: 0;
+        opacity: 1;
+        cursor: pointer;
+    }    
+}
+
+.close{
+    display: none;
+}

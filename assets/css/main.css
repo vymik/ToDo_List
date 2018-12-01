@@ -1,0 +1,55 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+html {
+  font-size: 16px;
+}
+
+html,
+body {
+  margin: 0 auto;
+}
+
+body {
+  margin-left: 5%;
+}
+
+.done {
+  text-decoration: line-through;
+  list-style: none;
+  position: relative;
+}
+
+.done::before {
+  content: '✓';
+  margin-right: 10px;
+  text-decoration: none;
+  position: absolute;
+  top: -3px;
+  left: -15px;
+}
+
+li {
+  width: 170px;
+  position: relative;
+}
+
+li::after {
+  content: "\274c";
+  font-size: 0.7rem;
+  position: absolute;
+  right: 0;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.close {
+  display: none;
+}
+/*# sourceMappingURL=main.css.map */
