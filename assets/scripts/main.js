@@ -2,17 +2,18 @@
 
 let button = document.querySelector('#enter');
 let input = document.querySelector('#userinput');
-let ul = document.querySelector("ul");
+let list = document.querySelector("ul");
 let li = document.querySelectorAll('li');
 let after = window.getComputedStyle(
-    document.querySelector("ul"), ':after'
+    document.querySelector("li"), ':after'
 );
+
 
 let inputLength = () => input.value.length;
 let createToDoElement = () => {
     let li = document.createElement("li");
     li.appendChild(document.createTextNode(input.value));
-    ul.appendChild(li);
+    list.appendChild(li);
     input.value = "";
 }
 
@@ -28,12 +29,24 @@ let addToDoElementAfterKeypress = (event) => {
     } 
 }
 
+let markElementChecked = (ev) => {
+    if(ev.target.tagName === 'LI'){
+        ev.target.classList.toggle('done');
+    }
+}
+
+let removeElement = (eve) => {
+    if(eve.target.tagName === 'LI'){
+        eve.target.classList.add('close');
+    }
+}
+
+
+
 button.addEventListener("click", addToDoElementAfterClick);
 
 input.addEventListener("keypress", addToDoElementAfterKeypress);
 
-ul.addEventListener("click", (ev) => {
-    if(ev.target.tagName === 'LI'){
-        ev.target.classList.toggle('done');
-    }
-});
+list.addEventListener("click", markElementChecked);
+
+list.addEventListener("dblclick", removeElement);

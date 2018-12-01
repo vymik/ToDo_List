@@ -41,15 +41,6 @@ li {
   cursor: pointer;
 }
 
-li::after {
-  content: "\274c";
-  font-size: 0.7rem;
-  position: absolute;
-  right: 0;
-  opacity: 1;
-  cursor: pointer;
-}
-
 .close {
   display: none;
 }
